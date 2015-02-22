@@ -1,21 +1,24 @@
 $nav-height: 3em;
 [role="navigation"] {
+    box-shadow: rgba(255, 255, 255, 0.7) 1px 1px 3px 1px;
+    transition: all 0.5s;
     line-height: $nav-height;
-    background: $flat-silver;
+    background: black;
     width: 100%;
     white-space: nowrap;
-
+    margin-bottom: 1em; 
     a {
         display: inline-block;
         font-variant: small-caps;
         width: 33%;
-        
         text-align: center;
         text-decoration: none;
-        font-size: larger;
+        font-size: xx-large;
+        color: white;
         vertical-align: middle;
         &:hover, &:active {
             background-color: $flat-clouds;
+            color: black;
         }
     }
 }

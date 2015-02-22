@@ -24,7 +24,10 @@ dmf.createModule('projects', function(c, config) {
 
     }
 
-    function destroy() {}
+    function destroy() {
+        hideProjectList();
+        hideProjects();   
+    }
 
     /******************************** framework listeners *********************/
     /******************************** general functions ***********************/
@@ -56,9 +59,6 @@ dmf.createModule('projects', function(c, config) {
         }, 150);
 
     }
-
-
-
 
     return {
         properties: properties,

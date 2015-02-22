@@ -10,7 +10,7 @@ dmf.createModule('controller', function(c, config) {
         }
     };
 
-    function initialize(scope) {
+    function initialize() {
         startup();
     }
 
@@ -19,13 +19,13 @@ dmf.createModule('controller', function(c, config) {
     }
 
     function startup() {
-        c.startModules(['navigation', 'projects']);
+        c.startModules(['navigation']);
         c.notify('state-started');
     }
 
     function shutdown() {
 
-        c.stopModules(['navigation', 'projects']);
+        c.stopModules(['navigation']);
     }
 
     function restart() {

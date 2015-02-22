@@ -67,7 +67,7 @@ var
 	// Use the correct document accordingly with window argument (sandbox)
 	document = window.document,
 
-	version = "0.0.167",
+	version = "0.0.234",
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
@@ -9836,7 +9836,7 @@ dmf.createModule('system-server', function(c, config) {
  */
 dmf.extendConfig({
 	globals: {
-		version: '0.0.167'
+		version: '0.0.234'
 	},	
 	saver: {
 		'namespace': 'task_manager_',
@@ -9878,7 +9878,7 @@ dmf.createModule('controller', function(c, config) {
         }
     };
 
-    function initialize(scope) {
+    function initialize() {
         startup();
     }
 
@@ -9887,18 +9887,294 @@ dmf.createModule('controller', function(c, config) {
     }
 
     function startup() {
-        c.startModules([]);
+        c.startModules(['navigation']);
         c.notify('state-started');
     }
 
     function shutdown() {
 
-        c.stopModules([]);
+        c.stopModules(['navigation']);
     }
 
     function restart() {
         shutdown();
         startup();
+    }
+
+    return {
+        properties: properties,
+        initialize: initialize,
+        destroy: destroy,
+    };
+
+});
+
+dmf.createModule('navigation', function(c, config) {
+    'use strict';
+
+    var properties = {
+        id: 'navigation',
+        listeners: {
+            'nav-about-clicked': navigateToAbout,
+            'nav-projects-clicked': navigateToProjects,
+            'nav-contact-clicked': navigateToContacts
+        }
+    };
+
+    function initialize() {
+        c.startModules(['navbar']);
+        navigateToAbout();
+    }
+
+    function destroy() {
+        c.stopModules(['navbar']);
+    }
+
+    /******************************** framework listeners *********************/
+
+    function navigateToAbout() {
+        stopAllPages();
+        c.startModule('about');
+    }
+
+    function navigateToProjects() {
+        stopAllPages();
+        c.startModule('projects');
+    }
+
+    function navigateToContacts() {
+        stopAllPages();
+        c.startModule('contact');
+    }
+
+    function stopAllPages() {
+        c.stopModules(['about', 'contact', 'projects']);
+    }
+
+    return {
+        properties: properties,
+        initialize: initialize,
+        destroy: destroy,
+    };
+
+});
+
+dmf.createModule('about', function(c, config) {
+    'use strict';
+
+    var properties = {
+        id: 'about',
+        selector: 'about',
+        listeners: {}
+    };
+
+    var elements;
+    /******************************** module initialization *******************/
+
+    function initialize() {
+        elements = {
+            'about': document.getElementById('about')
+        };
+
+        bindEvents();
+
+        c.dom.addClass(elements.about, 'visible');
+        c.dom.removeClass(elements.about, 'hidden');
+    }
+
+    function destroy() {
+        c.dom.addClass(elements.about, 'hidden');
+        c.dom.removeClass(elements.about, 'visible');
+        unbindEvents();
+    }
+
+    function bindEvents() {
+
+
+    }
+
+    function unbindEvents() {
+
+    }
+
+    /******************************** ui handlers *****************************/
+
+    /******************************** framework listeners *********************/
+    /******************************** general functions ***********************/
+
+    return {
+        properties: properties,
+        initialize: initialize,
+        destroy: destroy,
+    };
+
+});
+
+dmf.createModule('contact', function(c, config) {
+    'use strict';
+
+    var properties = {
+        id: 'contact',
+        selector: 'contact',
+        listeners: {}
+    };
+
+    var elements;
+    /******************************** module initialization *******************/
+
+    function initialize() {
+        elements = {
+            'contact': document.getElementById('contact')
+        };
+
+        bindEvents();
+
+        c.dom.addClass(elements.contact, 'visible');
+        c.dom.removeClass(elements.contact, 'hidden');
+    }
+
+    function destroy() {
+        c.dom.addClass(elements.contact, 'hidden');
+        c.dom.removeClass(elements.contact, 'visible');
+        unbindEvents();
+    }
+
+    function bindEvents() {
+        
+
+    }
+
+    function unbindEvents() {
+        
+    }
+
+    /******************************** ui handlers *****************************/
+
+    /******************************** framework listeners *********************/
+    /******************************** general functions ***********************/
+
+    return {
+        properties: properties,
+        initialize: initialize,
+        destroy: destroy,
+    };
+
+});
+
+dmf.createModule('navbar', function(c, config) {
+    'use strict';
+
+    var properties = {
+        id: 'navbar',
+        selector: 'navbar',
+        listeners: {}
+    };
+
+    var elements;
+    /******************************** module initialization *******************/
+
+    function initialize() {
+        elements = {
+            'nav': document.getElementById('navbar'),
+            'about': document.getElementById('nav-about'),
+            'projects': document.getElementById('nav-projects'),
+            'contact': document.getElementById('nav-contact')
+        };
+
+        bindEvents();
+    }
+
+    function destroy() {
+        unbindEvents();
+    }
+
+    function bindEvents() {
+        c.dom.listen(elements.nav, 'click', navigate);
+
+    }
+
+    function unbindEvents() {
+        c.dom.ignore(elements.nav, 'click', navigate);
+    }
+
+    /******************************** ui handlers *****************************/
+
+    function navigate(event) {
+        var source = event.target;
+        c.notify(event.target.id+'-clicked');
+    }
+
+    /******************************** framework listeners *********************/
+    /******************************** general functions ***********************/
+
+    return {
+        properties: properties,
+        initialize: initialize,
+        destroy: destroy,
+    };
+
+});
+
+dmf.createModule('projects', function(c, config) {
+    'use strict';
+
+    var properties = {
+        id: 'projects',
+        selector: 'projects',
+        listeners: {}
+    };
+
+    var elements;
+    /******************************** module initialization *******************/
+
+
+    function initialize() {
+        elements = {
+            'project-list': document.getElementById('projects'),
+            '$projects': $('.project')
+        };
+
+        hideProjectList();
+        hideProjects();
+        showProjectList();
+        showProjects(0);
+
+    }
+
+    function destroy() {
+        hideProjectList();
+        hideProjects();   
+    }
+
+    /******************************** framework listeners *********************/
+    /******************************** general functions ***********************/
+
+    function hideProjectList() {
+        c.dom.addClass(elements['project-list'], 'hidden');
+        c.dom.removeClass(elements['project-list'], 'visible');
+    }
+
+    function hideProjects() {
+        elements.$projects.hide();
+    }
+
+    function showProjectList() {
+        c.dom.addClass(elements['project-list'], 'visible');
+        c.dom.removeClass(elements['project-list'], 'hidden');
+    }
+
+
+    function showProjects(i) {
+        if (i >= elements.$projects.length) {
+            return;
+        }
+
+        elements.$projects.eq(i).show('slow');
+
+        setTimeout(function() {
+            showProjects(i + 1);
+        }, 150);
+
     }
 
     return {

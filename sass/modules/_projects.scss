@@ -1,4 +1,24 @@
 #projects {
-	text-align:center;
-	margin-bottom:3em;
+    text-align: center;
+    margin-bottom: 3em;
 }
+/********************** Image Bindings ************************/
+.project.task_manager {
+    background-image: url(../assets/images/task_manager.png);
+}
+.project.outsmart {
+    background-image: url(../assets/images/outsmart.png);
+}
+.project.mohawk_cal_gen {
+    background-image: url(../assets/images/mohawk_cal_gen.png);
+}
+.project.grouped_sliders {
+    background-image: url(../assets/images/grouped_sliders.png);
+}
+.project.dmf {
+    background-image: url(../assets/images/dmf.png);
+}
+.project.capstone {
+    background-image: url(../assets/images/capstone.png);
+}
+

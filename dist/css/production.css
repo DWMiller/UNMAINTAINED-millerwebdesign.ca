@@ -322,7 +322,8 @@ td, th {
 html {
   line-height: 1.5;
   font-size: 16px;
-  font-family: Open-sans, Georgia; }
+  font-family: Open-sans, Georgia;
+  color: white; }
 
 html, body, #main-container {
   background: url(../assets/images/carbonblack.jpg);
@@ -424,10 +425,6 @@ html, body, #main-container {
   .project {
     width: 300px; } }
 
-/********************** Image Bindings ************************/
-.project.task_manager {
-  background-image: url(../assets/images/task_manager.png); }
-
 /**
  * Modules are style sets dealing with specific sections of the content, 
  * typically identified by id
@@ -435,6 +432,25 @@ html, body, #main-container {
 #projects {
   text-align: center;
   margin-bottom: 3em; }
+
+/********************** Image Bindings ************************/
+.project.task_manager {
+  background-image: url(../assets/images/task_manager.png); }
+
+.project.outsmart {
+  background-image: url(../assets/images/outsmart.png); }
+
+.project.mohawk_cal_gen {
+  background-image: url(../assets/images/mohawk_cal_gen.png); }
+
+.project.grouped_sliders {
+  background-image: url(../assets/images/grouped_sliders.png); }
+
+.project.dmf {
+  background-image: url(../assets/images/dmf.png); }
+
+.project.capstone {
+  background-image: url(../assets/images/capstone.png); }
 
 [role="navigation"] {
   box-shadow: rgba(255, 255, 255, 0.7) 1px 1px 3px 1px;

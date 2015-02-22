@@ -26,30 +26,46 @@
 <body>
     <div id="main-container">
 
-        <nav role="navigation">
-            <a href="#">About Me</a>
-            <a href="#">Projects</a>
-            <a href="#">Contact</a>
+        <nav id="navbar" role="navigation">
+            <a id="nav-about" href="#">About Me</a>
+            <a id="nav-projects" href="#">Projects</a>
+            <a id="nav-contact" href="#">Contact</a>
         </nav>
 
+        <section id="about" class="hidden">
+            <h2>Test - About Page</h2>
+        </section>
+
         <section id="projects" class="hidden">
+
             <div class="project task_manager">
                 <a href="/task_manager"></a>
-                <!-- <img src="assets/images/task_manager.png" alt=""> -->
                 <h2 class="project-title">Task Manager</h2>
                 <p class="project-desc"></p>
-               
             </div>
-            <div class="project">
+            <div class="project outsmart">
+                <a href="http://outsmart.scaleengine.net/dev/dave/"></a>
                 <h2 class="project-title">Outsmart</h2>
                 <p class="project-desc"></p>
             </div>
-            <div class="project">
+            <div class="project mohawk_cal_gen">
+                <a href="/mohawk_cal_gen"></a>
                 <h2 class="project-title">Mohawk Calendar Generator</h2>
                 <p class="project-desc"></p>
             </div>
-            <div class="project">
-                <h2 class="project-title">Other</h2>
+            <div class="project grouped_sliders">
+                <a href="/grouped_sliders"></a>
+                <h2 class="project-title">Grouped Sliders</h2>
+                <p class="project-desc"></p>
+            </div>
+            <div class="project dmf">
+                <a href="https://github.com/DWMiller/dmf"></a>
+                <h2 class="project-title">DMF</h2>
+                <p class="project-desc"></p>
+            </div>
+            <div class="project capstone">
+            <a href="https://github.com/DWMiller/Capstone"></a>
+                <h2 class="project-title">Space Game</h2>
                 <p class="project-desc"></p>
             </div>
             <div class="project">
@@ -60,14 +76,10 @@
                 <h2 class="project-title">Other</h2>
                 <p class="project-desc"></p>
             </div>
-            <div class="project">
-                <h2 class="project-title">Other</h2>
-                <p class="project-desc"></p>
-            </div>
-            <div class="project">
-                <h2 class="project-title">Other</h2>
-                <p class="project-desc"></p>
-            </div>
+        </section>
+
+        <section id="contact" class="hidden">
+            <h2>Test - Contact Page</h2>
         </section>
 
         <footer>

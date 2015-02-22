@@ -19,13 +19,13 @@ dmf.createModule('controller', function(c, config) {
     }
 
     function startup() {
-        c.startModules([]);
+        c.startModules(['navigation', 'projects']);
         c.notify('state-started');
     }
 
     function shutdown() {
 
-        c.stopModules([]);
+        c.stopModules(['navigation', 'projects']);
     }
 
     function restart() {

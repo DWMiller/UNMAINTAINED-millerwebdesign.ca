@@ -3,7 +3,6 @@
 @import 'vendors/flat-colors';
 
 @import 'vars/layout';
-@import 'vars/colours';
 
 @import 'globals/z-index';
 
@@ -24,3 +23,5 @@
  * typically identified by id
  */
 
+@import 'modules/projects';
+@import 'modules/nav';

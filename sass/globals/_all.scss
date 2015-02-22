@@ -5,7 +5,8 @@ html {
 }
 html, body, #main-container {
     // overflow: hidden; // Need this, but not until styles exist to ensure content will always fit
-    background-color: $base;
+    // background-color: $base;
+    background: url(../assets/images/carbonblack.jpg);
     height: 100%;
 }
 #main-container * {
@@ -19,11 +20,19 @@ html, body, #main-container {
     border: 1px solid rgba(191, 191, 191, 0.5);
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
+.shadow-light {
+    border: 1px solid rgba(191, 191, 191, 0.5);
+    box-shadow: rgba(255, 255, 255, 0.7) 2px 2px 5px 1px;
+}
+.shadow-light-sm {
+    border: 1px solid rgba(191, 191, 191, 0.5);
+    box-shadow: rgba(255, 255, 255, 0.7) 2px 2px 5px 1px;
+}
 .center {
     text-align: center;
 }
 .error {
-    color: $errorRed;
+    color: $flat-alizarin;
 }
 .hidden {
     display: none;

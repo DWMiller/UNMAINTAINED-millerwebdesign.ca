@@ -1,0 +1,21 @@
+$nav-height: 3em;
+[role="navigation"] {
+    line-height: $nav-height;
+    background: $flat-silver;
+    width: 100%;
+    white-space: nowrap;
+
+    a {
+        display: inline-block;
+        font-variant: small-caps;
+        width: 33%;
+        
+        text-align: center;
+        text-decoration: none;
+        font-size: larger;
+        vertical-align: middle;
+        &:hover, &:active {
+            background-color: $flat-clouds;
+        }
+    }
+}

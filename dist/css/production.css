@@ -370,11 +370,11 @@ html, body, #main-container {
 .border-boxed, #main-container * {
   box-sizing: border-box; }
 
-@media only screen and (max-width: 899px) { }
+@media only screen and (max-width: 499px) { }
 
-@media only screen and (min-width: 900px) { }
+@media only screen and (min-width: 500px) { }
 
-@media only screen and (min-width: 1400px) { }
+@media only screen and (min-width: 1000px) { }
 
 /**
  * Components are style sets dealing with a specific type of element 
@@ -383,7 +383,6 @@ html, body, #main-container {
 .project {
   transition: all 0.2s;
   overflow: hidden;
-  box-shadow: rgba(255, 255, 255, 0.7) 1px 1px 3px 1px;
   position: relative;
   height: 175px;
   background-color: black;
@@ -395,7 +394,8 @@ html, body, #main-container {
     box-shadow: none;
     cursor: pointer; }
     .project:hover .project-title, .project:active .project-title {
-      right: 0; }
+      right: 0;
+      font-variant: small-caps; }
   .project .project-title {
     background: black;
     transition: all 0.3s;
@@ -406,24 +406,28 @@ html, body, #main-container {
     margin: 0;
     text-align: right;
     padding: 0 0.3em;
-    border-radius: 0 3px 0 0; }
+    width: 100%; }
   .project a {
     position: absolute;
     left: 0;
     width: 100%;
     height: 100%; }
 
-@media only screen and (max-width: 899px) {
+@media only screen and (max-width: 499px) {
   .project {
+    width: 100%;
+    background-size: 95%;
+    background-position: 50%;
+    background-repeat: no-repeat; } }
+
+@media only screen and (min-width: 500px) {
+  .project {
+    box-shadow: rgba(255, 255, 255, 0.7) 1px 1px 3px 1px;
     width: 49%; } }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 1000px) {
   .project {
-    width: 24%; } }
-
-@media only screen and (min-width: 1400px) {
-  .project {
-    width: 300px; } }
+    width: 450px; } }
 
 /**
  * Modules are style sets dealing with specific sections of the content, 
@@ -457,21 +461,30 @@ html, body, #main-container {
   transition: all 0.5s;
   line-height: 3em;
   background: black;
+  font-variant: small-caps;
   width: 100%;
   white-space: nowrap;
   margin-bottom: 1em; }
   [role="navigation"] a {
     display: inline-block;
-    font-variant: small-caps;
     width: 33%;
     text-align: center;
     text-decoration: none;
-    font-size: xx-large;
     color: white;
     vertical-align: middle; }
     [role="navigation"] a:hover, [role="navigation"] a:active {
       background-color: #ECF0F1;
       color: black; }
+
+@media only screen and (max-width: 499px) {
+  [role="navigation"] a {
+    font-size: large; } }
+
+@media only screen and (min-width: 500px) {
+  [role="navigation"] a {
+    font-size: xx-large; } }
+
+@media only screen and (min-width: 1000px) { }
 
 footer {
   position: fixed;

@@ -67,7 +67,7 @@ var
 	// Use the correct document accordingly with window argument (sandbox)
 	document = window.document,
 
-	version = "0.0.248",
+	version = "0.0.311",
 
 	// Define a local copy of jQuery
 	jQuery = function( selector, context ) {
@@ -9836,7 +9836,7 @@ dmf.createModule('system-server', function(c, config) {
  */
 dmf.extendConfig({
 	globals: {
-		version: '0.0.248'
+		version: '0.0.311'
 	},	
 	saver: {
 		'namespace': 'task_manager_',
@@ -9917,13 +9917,12 @@ dmf.createModule('navigation', function(c, config) {
         listeners: {
             'nav-about-clicked': navigateToAbout,
             'nav-projects-clicked': navigateToProjects,
-            'nav-contact-clicked': navigateToContacts
         }
     };
 
     function initialize() {
         c.startModules(['navbar']);
-        navigateToAbout();
+        navigateToProjects();
     }
 
     function destroy() {
@@ -9942,13 +9941,8 @@ dmf.createModule('navigation', function(c, config) {
         c.startModule('projects');
     }
 
-    function navigateToContacts() {
-        stopAllPages();
-        c.startModule('contact');
-    }
-
     function stopAllPages() {
-        c.stopModules(['about', 'contact', 'projects']);
+        c.stopModules(['about', 'projects']);
     }
 
     return {
@@ -10010,57 +10004,6 @@ dmf.createModule('about', function(c, config) {
 
 });
 
-dmf.createModule('contact', function(c, config) {
-    'use strict';
-
-    var properties = {
-        id: 'contact',
-        selector: 'contact',
-        listeners: {}
-    };
-
-    var elements;
-    /******************************** module initialization *******************/
-
-    function initialize() {
-        elements = {
-            'contact': document.getElementById('contact')
-        };
-
-        bindEvents();
-
-        c.dom.addClass(elements.contact, 'visible');
-        c.dom.removeClass(elements.contact, 'hidden');
-    }
-
-    function destroy() {
-        c.dom.addClass(elements.contact, 'hidden');
-        c.dom.removeClass(elements.contact, 'visible');
-        unbindEvents();
-    }
-
-    function bindEvents() {
-        
-
-    }
-
-    function unbindEvents() {
-        
-    }
-
-    /******************************** ui handlers *****************************/
-
-    /******************************** framework listeners *********************/
-    /******************************** general functions ***********************/
-
-    return {
-        properties: properties,
-        initialize: initialize,
-        destroy: destroy,
-    };
-
-});
-
 dmf.createModule('navbar', function(c, config) {
     'use strict';
 
@@ -10074,11 +10017,10 @@ dmf.createModule('navbar', function(c, config) {
     /******************************** module initialization *******************/
 
     function initialize() {
+
         elements = {
-            'nav': document.getElementById('navbar'),
-            'about': document.getElementById('nav-about'),
-            'projects': document.getElementById('nav-projects'),
-            'contact': document.getElementById('nav-contact')
+            'about': document.getElementById('about-nav'),
+            'projects': document.getElementById('projects-nav'),
         };
 
         bindEvents();
@@ -10089,12 +10031,13 @@ dmf.createModule('navbar', function(c, config) {
     }
 
     function bindEvents() {
-        c.dom.listen(elements.nav, 'click', navigate);
-
+        c.dom.listen(elements.about, 'click', navigate);
+        c.dom.listen(elements.projects, 'click', navigate);
     }
 
     function unbindEvents() {
-        c.dom.ignore(elements.nav, 'click', navigate);
+        c.dom.ignore(elements.about, 'click', navigate);
+        c.dom.ignore(elements.projects, 'click', navigate);
     }
 
     /******************************** ui handlers *****************************/

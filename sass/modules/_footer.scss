@@ -1,16 +1,40 @@
 $footer-height: 3em;
 footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
     text-align: center;
     background: black;
     width: 100%;
-    white-space: nowrap;
+    // white-space: nowrap;
     a {
         line-height: $footer-height;
         color: white;
         vertical-align: middle;
+    }
+}
+#socialbar {
+    list-style: none;
+    padding: 0.5em 0;
+    img {
+        border: 0px;
+    }
+    li {
+        display: inline-block;
+        height: $footer-height;
+        vertical-align: top;
+        padding-right: 0.5em;
+        img {
+            width: 48px;
+            height: 48px;
+        }
+        a:hover {
+            position: relative;
+            top: 2px;
+        }
+    }
+}
+@media only screen and (min-width: $md-brkp) {
+    footer {
+        position: fixed;
+        bottom: 0;
+        left: 0;
     }
 }

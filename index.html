@@ -25,19 +25,43 @@
 
 <body>
     <div id="main-container">
-
-        <nav id="navbar" role="navigation">
-            <a id="nav-about" href="#">About Me</a>
-            <a id="nav-projects" href="#">Projects</a>
-            <a id="nav-contact" href="#">Contact</a>
-        </nav>
-
         <section id="about" class="hidden">
-            <h2>Test - About Page</h2>
+
+            <nav id="about-nav" role="navigation">
+                <a id="nav-projects" href="#">View My Projects</a>
+            </nav>
+
+            <article>
+                <header>
+                    <h2>Contact</h2>
+                </header>
+                <ul>
+                    <li>
+                        David Miller -
+                        <a href="mailto:david.miller8@mohawkcollege.ca">david.miller8@mohawkcollege.ca</a>
+                    </li>
+                </ul>
+            </article>
+
+            <article>
+                <header>
+                    <h2>About David</h2>
+                </header>
+
+                <img src="assets/images/me.gif" height="150px" width="125px">
+
+                <p>Personal blurb stuff can go here</p>
+            </article>
+
         </section>
 
         <section id="projects" class="hidden">
-
+            <nav id="projects-nav" role="navigation">
+                <a id="nav-about" href="#">Contact Me</a>
+            </nav>
+            <header>
+                <h1>Projects</h1>
+            </header>
             <div class="project task_manager">
                 <a href="/task_manager"></a>
                 <h2 class="project-title">Task Manager</h2>
@@ -70,12 +94,35 @@
             </div>
         </section>
 
-        <section id="contact" class="hidden">
-            <h2>Test - Contact Page</h2>
-        </section>
-
         <footer>
-            <a title="" href="https://github.com/DWMiller?tab=repositories">View projects on GitHub</a><span>|</span>
+            <!-- START SOCIAL MEDIA WIDGET -->
+            <ul id="socialbar">
+                <li id="facebook">
+                    <a target="_blank" href="http://www.facebook.com/profile.php?id=843935365">
+                        <IMG src="assets/images/social/facebook.png">
+                    </a>
+                </li>
+                <li id="twitter">
+                    <a target="_blank" href="http://twitter.com/MillerWebDev">
+                        <IMG src="assets/images/social/twitter.png">
+                    </a>
+                </li>
+                <li id="linkedin">
+                    <a target="_blank" href="http://www.linkedin.com/profile/view?id=239673681">
+                        <IMG src="assets/images/social/linkedin.png">
+                    </a>
+                </li>
+                <li id="Googleplus">
+                    <a target="_blank" href="https://plus.google.com/+DavidMillerWebDev">
+                        <IMG src="assets/images/social/Googleplus.png">
+                    </a>
+                </li>
+                <li>
+                    <a title="" href="https://github.com/DWMiller?tab=repositories">View projects on GitHub</a>
+                </li>
+            </ul>
+            <!-- END SOCIAL MEDIA WIDGET -->
+
         </footer>
     </div>
     <script type="text/javascript" src="js/production.js"></script>

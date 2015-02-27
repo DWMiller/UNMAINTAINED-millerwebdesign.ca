@@ -1,28 +1,24 @@
 @import 'vendors/normalize';
-
 @import 'vendors/flat-colors';
-
 @import 'vars/layout';
-
 @import 'globals/z-index';
-
 @import 'globals/all';
 @import 'globals/smallSize';
 @import 'globals/mediumSize';
 @import 'globals/largeSize';
-
 /**
  * Components are style sets dealing with a specific type of element 
  * that may be used throughout the application
  */
 
 @import 'components/project-block';
-
+@import 'components/nav';
 /**
  * Modules are style sets dealing with specific sections of the content, 
  * typically identified by id
  */
 
+@import 'modules/container';
+@import 'modules/about';
 @import 'modules/projects';
-@import 'modules/nav';
 @import 'modules/footer';

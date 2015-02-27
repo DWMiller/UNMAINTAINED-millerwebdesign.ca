@@ -6,13 +6,12 @@ dmf.createModule('navigation', function(c, config) {
         listeners: {
             'nav-about-clicked': navigateToAbout,
             'nav-projects-clicked': navigateToProjects,
-            'nav-contact-clicked': navigateToContacts
         }
     };
 
     function initialize() {
         c.startModules(['navbar']);
-        navigateToAbout();
+        navigateToProjects();
     }
 
     function destroy() {
@@ -31,13 +30,8 @@ dmf.createModule('navigation', function(c, config) {
         c.startModule('projects');
     }
 
-    function navigateToContacts() {
-        stopAllPages();
-        c.startModule('contact');
-    }
-
     function stopAllPages() {
-        c.stopModules(['about', 'contact', 'projects']);
+        c.stopModules(['about', 'projects']);
     }
 
     return {

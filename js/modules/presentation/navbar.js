@@ -11,11 +11,10 @@ dmf.createModule('navbar', function(c, config) {
     /******************************** module initialization *******************/
 
     function initialize() {
+
         elements = {
-            'nav': document.getElementById('navbar'),
-            'about': document.getElementById('nav-about'),
-            'projects': document.getElementById('nav-projects'),
-            'contact': document.getElementById('nav-contact')
+            'about': document.getElementById('about-nav'),
+            'projects': document.getElementById('projects-nav'),
         };
 
         bindEvents();
@@ -26,12 +25,13 @@ dmf.createModule('navbar', function(c, config) {
     }
 
     function bindEvents() {
-        c.dom.listen(elements.nav, 'click', navigate);
-
+        c.dom.listen(elements.about, 'click', navigate);
+        c.dom.listen(elements.projects, 'click', navigate);
     }
 
     function unbindEvents() {
-        c.dom.ignore(elements.nav, 'click', navigate);
+        c.dom.ignore(elements.about, 'click', navigate);
+        c.dom.ignore(elements.projects, 'click', navigate);
     }
 
     /******************************** ui handlers *****************************/

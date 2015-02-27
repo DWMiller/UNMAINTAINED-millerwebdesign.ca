@@ -416,7 +416,6 @@ html, body, #main-container {
 @media only screen and (max-width: 499px) {
   .project {
     width: 100%;
-    background-size: 95%;
     background-position: 50%;
     background-repeat: no-repeat; } }
 
@@ -429,10 +428,66 @@ html, body, #main-container {
   .project {
     width: 450px; } }
 
+nav {
+  box-shadow: rgba(255, 255, 255, 0.7) 1px 1px 3px 1px;
+  transition: all 0.5s;
+  line-height: 3em;
+  background: black;
+  font-variant: small-caps;
+  width: 100%;
+  white-space: nowrap;
+  margin-bottom: 1em; }
+  nav a {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    vertical-align: middle; }
+    nav a:hover, nav a:active {
+      background-color: #ECF0F1;
+      color: black; }
+
+@media only screen and (max-width: 499px) {
+  nav a {
+    font-size: large; } }
+
+@media only screen and (min-width: 500px) {
+  nav a {
+    font-size: xx-large; } }
+
+@media only screen and (min-width: 1000px) { }
+
 /**
  * Modules are style sets dealing with specific sections of the content, 
  * typically identified by id
  */
+#main-container {
+  padding: 1em; }
+
+#about {
+  max-width: 1400px;
+  margin: auto; }
+  #about article {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    background-color: #BDC3C7;
+    color: black; }
+
+@media only screen and (max-width: 499px) {
+  #about article {
+    width: 100%; } }
+
+@media only screen and (min-width: 500px) {
+  #about article {
+    width: 48%;
+    margin: 0 1%;
+    border: 1px solid rgba(191, 191, 191, 0.5);
+    border-radius: 3px; } }
+
+@media only screen and (min-width: 1000px) { }
+
 #projects {
   text-align: center;
   margin-bottom: 3em; }
@@ -456,46 +511,34 @@ html, body, #main-container {
 .project.capstone {
   background-image: url(../assets/images/capstone.png); }
 
-[role="navigation"] {
-  box-shadow: rgba(255, 255, 255, 0.7) 1px 1px 3px 1px;
-  transition: all 0.5s;
-  line-height: 3em;
-  background: black;
-  font-variant: small-caps;
-  width: 100%;
-  white-space: nowrap;
-  margin-bottom: 1em; }
-  [role="navigation"] a {
-    display: inline-block;
-    width: 33%;
-    text-align: center;
-    text-decoration: none;
-    color: white;
-    vertical-align: middle; }
-    [role="navigation"] a:hover, [role="navigation"] a:active {
-      background-color: #ECF0F1;
-      color: black; }
-
-@media only screen and (max-width: 499px) {
-  [role="navigation"] a {
-    font-size: large; } }
-
-@media only screen and (min-width: 500px) {
-  [role="navigation"] a {
-    font-size: xx-large; } }
-
-@media only screen and (min-width: 1000px) { }
-
 footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
   text-align: center;
   background: black;
-  width: 100%;
-  white-space: nowrap; }
+  width: 100%; }
   footer a {
     line-height: 3em;
     color: white;
     vertical-align: middle; }
+
+#socialbar {
+  list-style: none;
+  padding: 0.5em 0; }
+  #socialbar img {
+    border: 0px; }
+  #socialbar li {
+    display: inline-block;
+    height: 3em;
+    vertical-align: top;
+    padding-right: 0.5em; }
+    #socialbar li img {
+      width: 48px;
+      height: 48px; }
+    #socialbar li a:hover {
+      position: relative;
+      top: 2px; }
+
+@media only screen and (min-width: 500px) {
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0; } }

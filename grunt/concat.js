@@ -1,8 +1,8 @@
 module.exports = {
     js: {
         src: [
-            'js/libs/**/*.js',
-            'js/dmf.js',            
+            'lib/jquery/jquery.js',
+            'lib/dmf/dmf.js',
             'js/config/**/*.js',
             'js/templates/**/*.js',
             'js/classes/**/*.js',
@@ -12,7 +12,7 @@ module.exports = {
         dest: 'dist/js/production.js',
     },
     ie: {
-        src:['js/ie/**/*.js'],
+        src: ['js/ie/**/*.js'],
         dest: 'dist/js/shiv.js'
     }
 }

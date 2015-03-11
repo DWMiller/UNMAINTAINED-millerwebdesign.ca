@@ -1,6 +1,6 @@
 module.exports = {
-  first: ['newer:jshint'],
-  second:['newer:concat','newer:copy','newer:htmlmin','newer:sass'],
-  third: ['newer:uglify','newer:autoprefixer','version'],
-  //fourth: ['clean'],
+    first: ['jshint', 'htmlmin'],
+    second: ['concat', 'copy', 'sass'],
+    third: ['uglify', 'autoprefixer', 'version'],
+    //fourth: ['clean'],
 };
